@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+
+import gitlab
+import subprocess
+import json
+import warnings,requests
+warnings.filterwarnings("ignore")
+gl = gitlab.Gitlab(url='http://yys-git.dev.netease.com',private_token='glpat--K3sL-VFMZFY-4kK4Hxe')
+gl.auth()
+project = gl.projects.get(27)
+git_url = project.http_url_to_repo
+subprocess.call(['git', 'clone', git_url])

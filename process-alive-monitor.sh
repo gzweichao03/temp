@@ -1,0 +1,1 @@
+ps -ef | grep logstash | grep -v grep || /home/gzweichao03/elk/logstash-8.7.1/bin/logstash --config.reload.automatic > /dev/null 2>&1
